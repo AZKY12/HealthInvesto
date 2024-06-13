@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthInvesto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #272727;">
+    <header>
+        <h1>HealthInvesto</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#registrationModal">Registration</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <section id="about">
+                    <h2>About HealthInvesto</h2>
+                    <p>HealthInvesto is a leading healthcare platform dedicated to improving access to quality healthcare services for individuals worldwide. We leverage cutting-edge technology and strategic partnerships to provide innovative solutions that enhance patient care, streamline healthcare delivery, and promote overall well-being.</p>
+                </section>
+                <section id="mission">
+                    <h2>Our Mission</h2>
+                    <p>At HealthInvesto, our mission is to revolutionize the healthcare industry by providing innovative solutions that enhance access to quality healthcare services, empower patients, and improve overall health outcomes.</p>
+                </section>
+
+                <section id="vision">
+                    <h2>Our Vision</h2>
+                    <p>We envision a future where every individual has access to personalized, affordable, and high-quality healthcare services regardless of their location or socioeconomic status. Through technological innovation and collaborative partnerships, we aim to transform the healthcare landscape and create a healthier world for all.</p>
+                </section>
+
+                <section id="values">
+                    <h2>Our Values</h2>
+                    <ul>
+                        <li><strong>Empathy:</strong> We prioritize empathy and compassion in all our interactions with patients, healthcare providers, and stakeholders.</li>
+                        <li><strong>Integrity:</strong> We uphold the highest standards of integrity, transparency, and ethical conduct in everything we do.</li>
+                        <li><strong>Innovation:</strong> We embrace innovation and continuously seek out new ideas, technologies, and approaches to improve healthcare delivery.</li>
+                        <li><strong>Collaboration:</strong> We believe in the power of collaboration and partnership to achieve shared goals.</li>
+                        <li><strong>Accessibility:</strong> We are dedicated to improving healthcare accessibility and affordability for all individuals.</li>
+                    </ul>
+                </section>
+
+                <section id="team">
+                    <h2>Our Team</h2>
+                    <div class="team-member">
+                        <h3>Dr. Emily Smith, MD (Founder & CEO)</h3>
+                        <p>A passionate healthcare professional with years of experience in clinical practice and healthcare management. Dr. Smith is committed to driving innovation and improving healthcare outcomes for patients.</p>
+                    </div>
+                    <!-- Add more team members here -->
+                </section>
+
+                <section id="services">
+                    <h2>Our Services</h2>
+                    <ul>
+                        <li><strong>Doctor Search:</strong> Easily find and book appointments with healthcare professionals.</li>
+                        <li><strong>Telemedicine:</strong> Access virtual consultations with healthcare providers from anywhere.</li>
+                        <li><strong>Health Records Management:</strong> Securely store and manage your health records online.</li>
+                        <li><strong>Health Education:</strong> Access educational resources and personalized health information.</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="login.php" method="POST">
+                        <div class="form-group">
+                            <label for="username">Username or Hospital ID:</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Hospital Registration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="hospital_registration.php" method="POST">
+                        <div class="form-group">
+                            <label for="username">Hospital Name:</label>
+                            <input type="text" id="username" name="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="id">Hospital ID:</label>
+                            <input type="text" id="id" name="id" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom text-white text-center py-2">
+        <p>&copy; 2023 HealthInvesto</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Check if registrationSuccess parameter is true and display alert
+        if (getParameterByName('registrationSuccess') === 'true') {
+            alert("Hospital registration successful");
+        }
+    </script>
+</body>
+</html>
