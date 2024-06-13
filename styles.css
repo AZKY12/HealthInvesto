@@ -1,0 +1,114 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #272727; /* Light blue-gray background */
+}
+
+header {
+    background-color: #00337C; /* Dark blue header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #1C82AD; /* White section background */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000; /* White label text */
+}
+
+form input[type="text"],
+form input[type="date"] {
+    width: calc(100% - 20px); /* Adjust input width */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #272727; /* White border */
+    border-radius: 5px;
+    background-color: #fff; /* White input background */
+    color: #13005A; /* Dark blue-purple text */
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #03C988; /* Dark blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#doctors {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.doctor {
+    background-color: #03C988; /* Light blue background for doctor cards */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+footer {
+    background-color: #00337C; /* Dark blue footer */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#results {
+    margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+    nav ul {
+        display: inline-block; /* Display the list horizontally */
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+}
