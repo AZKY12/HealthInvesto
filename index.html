@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthInvesto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #272727;">
+    <header>
+        <h1>HealthInvesto</h1>
+        <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                    <li><a href="#" data-toggle="modal" data-target="#registrationModal">Registration</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <section id="search">
+                    <h2>Find a Doctor</h2>
+                    <form id="searchForm" action="search.php" method="GET">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="hospital">Hospital:</label>
+                                    <input type="text" id="hospital" name="hospital" class="form-control" placeholder="Enter hospital name">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="specialization">Specialization:</label>
+                                    <input type="text" id="specialization" name="specialization" class="form-control" placeholder="Enter specialization">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="date">Consultation Date:</label>
+                                    <input type="date" id="date" name="date" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg btn-block">Search</button>
+                    </form>
+
+                    <section id="results">
+                        <h2>Search Results</h2>
+                        <div id="doctors">
+                            <!-- Search results will be displayed here -->
+                        </div>
+                    </section>
+                </section>
+
+            </div>
+
+             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="login.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="username">Username or Hospital ID:</label>
+                                        <input type="text" id="username" name="username" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" id="password" name="password" class="form-control" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="registrationModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="registrationModalLabel">Hospital Registration</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="hospital_registration.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="username">Hospital Name:</label>
+                                        <input type="text" id="username" name="username" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="id">Hospital ID:</label>
+                                        <input type="text" id="id" name="id" class="form-control" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" id="password" name="password" class="form-control" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <footer class="fixed-bottom text-white text-center py-2">
+        <p>&copy; 2023 HealthInvesto</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Check if registrationSuccess parameter is true and display alert
+        if (getParameterByName('registrationSuccess') === 'true') {
+            alert("Hospital registration successful");
+        }
+    </script>
+
+</body>
+</html>
